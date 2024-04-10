@@ -13,6 +13,9 @@ def sample_classify_text(input_data):
     Args:
       input_data: A dictionary with the structure {"description": "text to analyze"}.
     """
+
+    # For list of supported languages:
+    # https://cloud.google.com/natural-language/docs/languages
     # Initialize the Google Cloud client
     client = language_v2.LanguageServiceClient()
     # Extract text_content from input_data
@@ -26,6 +29,9 @@ def sample_classify_text(input_data):
     response = client.classify_text(request={'document': document})
 
     # Process and return the response categories
+    # Get the name of the category representing the document.
+    # See the predefined taxonomy of categories model 2:
+    # https://cloud.google.com/natural-language/docs/categories
     categories = [{"name": category.name, "confidence": category.confidence} for category in response.categories]
     return categories
 
@@ -71,7 +77,8 @@ def txt_to_json_messages_only(filepath, lang='auto'):
     conversation = ' '.join(messages)
     # Devolver el contenido en el formato esperado
     return json.dumps({"description": conversation}, ensure_ascii=False, indent=2)
-
+# Llamada a la función txt_to_json_messages_only
+# txt_to_json_messages_only('ruta_del_archivo.txt')
 app = Flask(__name__)
 
 @app.route('/analyze_chat', methods=['POST'])
