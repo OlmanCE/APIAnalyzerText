@@ -16,7 +16,7 @@ Esta API de Flask permite a los usuarios analizar el contenido textual de chats,
 ## Authors
 
 - [@FabricioAA223](https://github.com/FabricioAA223)
-- [@Olmance ](https://github.com/OlmanCE)
+- [@OlmanCE ](https://github.com/OlmanCE)
 
 
 ## API Reference
