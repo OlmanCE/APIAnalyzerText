@@ -3,7 +3,7 @@
 
 API de Análisis de Chat
 
-Esta API de Flask permite a los usuarios analizar el contenido textual de chats, específicamente mensajes de WhatsApp, convirtiéndolos desde formatos de texto o JSON a análisis de categorías utilizando Google Cloud Natural Language API.  
+Esta API de Flask permite a los usuarios analizar el contenido textual de chats, específicamente mensajes de WhatsApp, convirtiéndolos desde formatos de texto o JSON a análisis de categorías utilizando Google Cloud Natural Language API.
 
 - Características Principales
 
@@ -31,7 +31,7 @@ Esta API de Flask permite a los usuarios analizar el contenido textual de chats,
 | :-------- | :------- | :------------------------- |
 | `chat` | `txt` | chat.txt debe mantener la estructura con la que fue exportada por la función de WhatsAWhatsApp |
 
-#### Get item
+#### Obtener las categorias
 
 ```http
   POST /api/items/${id}
@@ -49,7 +49,8 @@ Cómo Usar
 
     Envía una petición POST al endpoint /analyze_chat con un archivo de chat (en formato .txt o .json).
     La API procesa el archivo, extrae y clasifica el contenido del texto.
-    Recibe como respuesta las categorías del contenido analizado junto con valores de confianza asociados. El archivo Requeriments, contiene las referencias bibliotecas
+    Recibe como respuesta las categorías del contenido analizado junto con valores de confianza asociados. El archivo Requeriments, contiene las referencias bibliotecas.
+    Se puede implementar un tunel a traves de Ngrok https://dashboard.ngrok.com/get-started/setup/windows 
 
 
 Requisitos Previos
