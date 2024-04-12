@@ -20,7 +20,7 @@ def sample_classify_text(input_data):
     client = language_v2.LanguageServiceClient()
     # Extract text_content from input_data
     text_content = input_data.get("description", "")
-    print(text_content)
+    
     # Define document type and language
     type_ = language_v2.Document.Type.PLAIN_TEXT
     document = {"content": text_content, "type": type_}
@@ -89,6 +89,7 @@ def analyze_chat():
     if file.filename == '':
         return jsonify({'error': 'No selected file'}), 400
     
+    # Guarda el archivo en un archivo temporal para su procesamiento
     with tempfile.NamedTemporaryFile(delete=False) as tmp:
         file.save(tmp.name)
         if file.filename.endswith('.txt'):
