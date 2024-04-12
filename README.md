@@ -41,10 +41,7 @@ Esta API de Flask permite a los usuarios analizar el contenido textual de chats,
 | :-------- | :------- | :-------------------------------- |
 | `chat`      | `JSON` | Estructura del JSON "description": "texto a categorizar" |
 
-#### add(num1, num2)
-
-Takes two numbers and returns the sum.
-
+### Toma texto y lo envia al servicio de Googlo Claud Natural Languahe
 
 ## Deployment
 
